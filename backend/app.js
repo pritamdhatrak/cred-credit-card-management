@@ -1,57 +1,47 @@
 const express = require('express');
-const app = express();
-const db = require('./models');
 const cors = require('cors');
-const dotenv = require('dotenv');
-dotenv.config();
 const morgan = require('morgan');
-const reminder = require('./reminder');
-const swaggerUi = require('swagger-ui-express')
-const swaggerDocument = require('./swagger.json');
+require('dotenv').config();
 
-const { errorHandler } = require('./middlewares/errorHandling');
+const app = express();
 
-
-const PORT = process.env.PORT || 5000;
-
-// middlwares
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Middleware
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-// importing routes
-const authRoute = require('./routes/auth');
-const cardRoute = require('./routes/card');
-const rewardRoute = require('./routes/reward');
+// Routes
+app.use('/api/user', require('./routes/auth'));
 
+// Basic route
+app.get('/', (req, res) => {
+    res.json({ 
+        message: 'CRED Backend API is running!',
+        endpoints: {
+            signup: 'POST /api/user/signup',
+            login: 'POST /api/user/login',
+            profile: 'GET /api/user/profile'
+        }
+    });
+});
 
-// Routes middlewares
-app.use('/api/user', authRoute);
-app.use('/api/cards', cardRoute);
-app.use('/api/rewards', rewardRoute);
-
-app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-// 404 
+// 404 handler
 app.use((req, res) => {
-    res.statusCode = 404;
-    throw new Error(`404 not found`);
-})
+    res.status(404).json({ error: '404 - Route not found' });
+});
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
+});
 
-
-
-// Error Handler
-app.use(errorHandler);
-
-reminder();
-
-
-
-
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}`);
-  });
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📝 API available at http://localhost:${PORT}`);
+    console.log(`📊 Test endpoints:`);
+    console.log(`   POST http://localhost:${PORT}/api/user/signup`);
+    console.log(`   POST http://localhost:${PORT}/api/user/login`);
 });
