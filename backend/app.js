@@ -37,11 +37,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📝 API available at http://localhost:${PORT}`);
-    console.log(`📊 Test endpoints:`);
-    console.log(`   POST http://localhost:${PORT}/api/user/signup`);
-    console.log(`   POST http://localhost:${PORT}/api/user/login`);
-});
+module.exports = app;
