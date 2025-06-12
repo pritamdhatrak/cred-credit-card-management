@@ -69,7 +69,7 @@ const Footer = () => {
                       rel="noreferrer"
                       className="hover-none"
                     >
-                      <b>Abhishek Ranjan</b>
+                      <b>charutosh</b>
                     </a>
                   </h6>
                   <small>
@@ -77,7 +77,7 @@ const Footer = () => {
                     <span>
                       <i className="fas fa-envelope" aria-hidden="true"></i>
                     </span>{' '}
-                    abhishekrotary2002@gmail.com
+                    pritamdhatrak98@gmail.com
                   </small>
                 </div>
                 <div className="col-xl-3 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
@@ -88,14 +88,14 @@ const Footer = () => {
                       rel="noreferrer"
                       className="hover-none"
                     >
-                      <b>Narendra Manglani</b>
+                      <b>Charutosh Dhatrak</b>
                     </a>
                   </h6>
                   <small>
                     <span>
                       <i className="fas fa-envelope" aria-hidden="true"></i>
                     </span>{' '}
-                    narendramanglani04@gmail.com
+                    pritamdhatrak98@gmail.com
                   </small>
                 </div>
               </div>
