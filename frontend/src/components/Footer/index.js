@@ -36,7 +36,7 @@ const Footer = () => {
                     <b>Address</b>
                   </h6>
                   <p className="mb-1">college road Nashik</p>
-                  <p>Jharkhand</p>
+                  <p>Maharashtra</p>
                 </div>
               </div>
               <div className="row ">
