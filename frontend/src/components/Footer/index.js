@@ -35,7 +35,7 @@ const Footer = () => {
                   <h6 className="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5">
                     <b>Address</b>
                   </h6>
-                  <p className="mb-1">BIT Mesra, Ranchi</p>
+                  <p className="mb-1">college road Nashik</p>
                   <p>Jharkhand</p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                 <div className="col-xl-3 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
                   <h6 className="mt-55 mt-2 text-muted bold-text">
                     <a
-                      href="https://github.com/arabhiar"
+                      href="https://github.com/pritamdhatrak"
                       target="_blank"
                       rel="noreferrer"
                       className="hover-none"
@@ -83,7 +83,7 @@ const Footer = () => {
                 <div className="col-xl-3 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
                   <h6 className="text-muted bold-text">
                     <a
-                      href="https://github.com/ishuu7"
+                      href="https://github.com/pritamdhatrak"
                       target="_blank"
                       rel="noreferrer"
                       className="hover-none"
